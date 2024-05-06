@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.F_apiKey,
-  authDomain: import.meta.env.F_authDomain,
-  projectId: import.meta.env.F_projectId,
-  storageBucket: import.meta.env.F_storageBucket,
-  messagingSenderId: import.meta.env.F_messagingSenderId,
-  appId: import.meta.env.F_appId
+  apiKey: "AIzaSyBiH6xzXbNMWP1CrZ0LGq1u6HqVvwrlVVA",
+  authDomain: "spoty-e4cf9.firebaseapp.com",
+  projectId: "spoty-e4cf9",
+  storageBucket: "spoty-e4cf9.appspot.com",
+  messagingSenderId: "321035484206",
+  appId: "1:321035484206:web:b3c19630d15f53027d33bf"
 };
 
 // Initialize Firebase

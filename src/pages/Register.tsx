@@ -27,7 +27,6 @@ const Register = () => {
   .then((userCredential) => {
     // Signed up
     setUser({email, password})
-    console.log(userCredential);
     navigate('/')
     // ...
   })
