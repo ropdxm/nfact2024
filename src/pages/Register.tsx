@@ -24,7 +24,7 @@ const Register = () => {
     }
 
     createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  .then(() => {
     // Signed up
     setUser({email, password})
     navigate('/')
