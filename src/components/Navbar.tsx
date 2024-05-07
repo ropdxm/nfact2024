@@ -6,7 +6,6 @@ import { useContext } from '../Context';
 const Navbar = () => {
     const [showIcon, setShowIcon] = useState<boolean>(true);
     const { user, setUser } = useContext();
-
     const navigate = useNavigate();
 
     const signOutClick = () => {
