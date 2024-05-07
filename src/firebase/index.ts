@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import { collection, getFirestore, Timestamp } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,3 +19,13 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+
+export const commentsCol = collection(db, "comments");
+export const ratingCol = collection(db, "rating");
+export type CommentData = {
+	/** When reading from firebase, id isn't automatically populated, we have to get it from document's id */
+	user: string;
+	message: string;
+	date: Timestamp;
+};
