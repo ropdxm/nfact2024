@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router';
 
 const Home = () => {
   const [albums, setAlbums] = useState<any>(undefined);
+  const [q, setQ] = useState<string>("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -35,9 +37,19 @@ const Home = () => {
 
   return (
     <main>
+      <div className="search__container">
+    <p className="search__title">
+        Search for Albums
+    </p>
+    <input className="search__input" type="text" placeholder="Search" onChange={(e) => setQ(e.target.value)} />
+</div>
       <div className="wrapper">
+      
   <div className="card-container">
     {albums ? albums.albums?.map((item: any, index: number)   => {
+      if(item.name.slice(0, q.length)!=q){
+        return <></>
+      }
       return <div className="music-card" key={index} onClick={() => handleNavigate(item?.id)}>
       <img src={item.images[1].url} />
       <h4>{item.name}</h4>
