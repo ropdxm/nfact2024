@@ -77,43 +77,33 @@ const Album = () => {
         </div>
             
     <div className="comment-wrp">
-      <div className="comment container">
+      <div className="comment com-container">
         <div className="c-user">
           <img src={imgg} alt="" className="usr-img" />
           <p className="usr-name">maxblagun</p>
           <p className="cmnt-at">2 weeks ago</p>    
         </div>
         <p className="c-text">
-          <span className="reply-to"></span>
-          <span className="c-body"></span>
+          <span className="c-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer convallis eros lectus, vel pulvinar risus vehicula eu. Nam volutpat enim sed neque scelerisque aliquet</span>
         </p>
       </div>
       <div className="replies comments-wrp">
       </div>
     </div>
 
-<main>
+<div>
   <div className="comment-section">
 
     <div className="comments-wrp">
 
     </div>
-  <div className="reply-input container">
-      <img src="images/avatars/image-juliusomo.webp" alt="" className="usr-img" />
+  <div className="reply-input com-container">
+      <img src={imgg} alt="" className="usr-img" />
       <textarea className="cmnt-input" placeholder="Add a comment..."></textarea>
       <button className="bu-primary">SEND</button>
     </div>
     </div>
-  
-  <div className="modal-wrp invisible">
-    <div className="modal container">
-      <h3>Delete comment</h3>
-      <p>Are you sure you want to delete this comment? This will remove the comment and cant be undone</p>
-      <button className="yes">YES,DELETE</button>
-      <button className="no">NO,CANCEL</button>
-    </div>
-  </div>
-</main>
+</div>
 
       </div>
 

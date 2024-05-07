@@ -4,6 +4,7 @@
     background-image: linear-gradient(rgba(70, 76, 82, 0.4), rgba(7, 7, 8, 0.4) 85%);
     display: flex;
     flex-direction: column;
+    gap: 2rem;
     padding: 1.5rem 1rem;
     height: 100%;
     width: 100%;
@@ -109,11 +110,11 @@
 
 
 
-  
+
   button{
       cursor: pointer;
   }
-  .container button:hover{
+  .com-container button:hover{
       filter: saturate(80%);
   }
   .bu-primary{
@@ -124,7 +125,8 @@
   .comment-section{
       padding: 0 1rem;
   }
-  .container{
+  .com-container{
+    background-color: rgba(44, 44, 44, 0.2);
       border-radius: 8px;
       padding: 1.5rem;
   }
@@ -163,7 +165,6 @@
       padding-top: .5rem;
       width: 1rem;
       box-sizing: content-box;
-      background-color: var(--Very-light-gray);
       border-radius: 8px;
       align-self: flex-start;
   }
@@ -261,7 +262,6 @@
       font-weight: 400;
       content: "you";
       color: var(--White);
-      background-color: var(--Moderate-blue);
       padding: 0 .4rem;
       padding-bottom: .2rem;
       font-size: .8rem;
@@ -277,7 +277,7 @@
   }
   
   @media screen and (max-width:640px) {
-      .container{
+      .com-container{
           padding: .75rem;
       }
       .replies{
@@ -327,7 +327,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: rgba(0,0,0,.3);
   }
   
   .modal{
@@ -363,9 +362,7 @@
   }
   .modal .yes{
       grid-area: yes;
-      background-color: var(--Soft-Red);
   }
   .modal .no{
-      background-color: var(--Grayish-Blue);
       grid-area: no;
   }
