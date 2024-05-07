@@ -19,6 +19,7 @@
   .music-card {
     box-sizing: border-box;
     width: 250px;
+    min-height: 21rem;
     height: 100%;
     border-radius: 15px;
     background: rgba(228, 228, 228, .8);

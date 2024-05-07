@@ -34,6 +34,7 @@ const Login = () => {
   })
   .catch((error) => {
     console.log(error);
+    alert("wrong credentials!")
   })
   console.log(user);
   }

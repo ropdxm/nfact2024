@@ -182,3 +182,14 @@
     line-height: 1.5;
     text-decoration: none;
   }
+
+
+.my-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.my-profile h2 {
+  color: azure;
+}

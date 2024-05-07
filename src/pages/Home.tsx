@@ -1,25 +1,39 @@
+import { useEffect, useState } from 'react';
 import './home.css';
+import axios from 'axios';
 
 const Home = () => {
+  const [albums, setAlbums] = useState<any>(undefined);
+  useEffect(() => {
+    const fetchAlbums = async () => {
+      const {data} = await axios.get("https://api.spotify.com/v1/albums", {
+        headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_SPOTIFY_TOKEN}`
+        },
+        params: {
+            ids: "78bpIziExqiI9qztvNFlQu,5VoeRuTrGhTbKelUfwymwu,0KqvWwne6Iujkr2Szqsudk,0ODLCdHBFVvKwJGeSfd1jy"
+        }
+      });
+      setAlbums(data);
+      console.log(data)
+    }
+
+    console.log("ASBHFJDS")
+
+    fetchAlbums();
+
+  }, [])
   return (
     <main>
       <div className="wrapper">
   <div className="card-container">
-    <div className="music-card">
-      <img src="https://3.bp.blogspot.com/-cvF9UEYgmkc/V37qCNZQwLI/AAAAAAAAAbY/3Vrvqlv9tvkwpfB4f-qiq-ZuD5PsBKawQCLcB/s1600/DL%2B-%2BDL.png" />
-      <h4>This is Dua Lipa</h4>
-      <p>This is Dua Lipa. The essential tracks, all in one playlist.</p>
+    {albums ? albums.albums?.map((item: any, index: number)   => {
+      return <div className="music-card" key={index}>
+      <img src={item.images[1].url} />
+      <h4>{item.name}</h4>
+      <p>{item.artists?.map((it: any) => it.name + " ")}{item.release_date.slice(0, 4)}</p>
     </div>
-    <div className="music-card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQboHxhiBPxDYQBpLPa-NHHVhpHk4udSIt9RQ&usqp=CAU" />
-      <h4>This is James Bay.</h4>
-      <p>This is James Bay. The essential tracks, all in one playlist.</p>
-    </div>
-    <div className="music-card">
-      <img src="https://pbs.twimg.com/profile_images/1290872226728878080/gBBWXz9H_400x400.jpg" />
-      <h4>This is Katy Perry</h4>
-      <p>This is Katy Perry. The essential tracks, all in one playlist.</p>
-    </div>
+    }) : <div style={{color: "azure"}}>loading</div>}
   </div>
 </div>
 
