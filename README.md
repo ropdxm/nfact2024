@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# SPOTY - Task for Nfactorial Incubator 2024.
+This is a react-based app where you can explore different music and leave
+your thought in the comment section of each album. Also, rating system 
+works so feel free to express your opinion on various music albums!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Technologies used:
+react, vite, moment.js, firebase, axios, react-router
 
-Currently, two official plugins are available:
+How to use? Go to https://spotynfactorial.vercel.app/ to see live demo.
+Or "git clone https://github.com/ropdxm/nfact2024.git" and do "npm install".
+You will also need Spotify api key to use this app. Get it from spotify dashboard
+and paste it in .env file as "VITE_SPOTIFY_TOKEN". Then go "npm run dev"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Issues:
+I also wanted to add the feature of actually listening to music, but it turns out
+I need Spotify premium to do that (I ain't wasting money on premium lol).
+I didn't find any other free API that allow me to actually listen to mp3 songs.
+Another limitation that this product has is the limited amount of albums.
+(you have to hardcode the album ids in spotify request)
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+I used agile methodology to develop and it took me around 2.5 days to complete.
