@@ -125,6 +125,9 @@ const Album = () => {
 
   const handleAddCom = async (e: SyntheticEvent) => {
     e.preventDefault();
+    if(!user){
+      alert("login pls")
+    }
     try {
       console.log(user)
       await addDoc(commentsCol, {
@@ -145,6 +148,9 @@ const Album = () => {
 
   const handleRating = async (e: SyntheticEvent) => {
     e.preventDefault();
+    if(!user){
+      alert("login pls")
+    }
     if(rating<1 || rating>5){
       alert("Rating error")
       return;
