@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import './home.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router';
 
 const Home = () => {
   const [albums, setAlbums] = useState<any>(undefined);
+  const navigate = useNavigate();
+
   useEffect(() => {
     const fetchAlbums = async () => {
       const {data} = await axios.get("https://api.spotify.com/v1/albums", {
@@ -23,12 +26,19 @@ const Home = () => {
     fetchAlbums();
 
   }, [])
+
+  const handleNavigate = (album_id: string) => {
+    navigate(`/album/${album_id}`);
+    console.log("SABFJHSA")
+
+  }
+
   return (
     <main>
       <div className="wrapper">
   <div className="card-container">
     {albums ? albums.albums?.map((item: any, index: number)   => {
-      return <div className="music-card" key={index}>
+      return <div className="music-card" key={index} onClick={() => handleNavigate(item?.id)}>
       <img src={item.images[1].url} />
       <h4>{item.name}</h4>
       <p>{item.artists?.map((it: any) => it.name + " ")}{item.release_date.slice(0, 4)}</p>
