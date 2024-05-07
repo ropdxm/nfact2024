@@ -26,7 +26,6 @@ const Navbar = () => {
 
       <nav className="navbar">
         <Link to="/" className="nav-item" style={{"--i": 0} as CSSProperties}>Home</Link>
-        <Link to="/" className="nav-item" style={{"--i": 1} as CSSProperties}>Plan Your Visit</Link>
         {user ? <>
           <Link to="/profile" className="nav-item" style={{"--i": 2} as CSSProperties}>Profile</Link>
           <a onClick={signOutClick} className="nav-item" style={{"--i": 3} as CSSProperties}>Sign Out</a>
