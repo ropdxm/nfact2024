@@ -38,9 +38,23 @@ const Album = () => {
     }
     
     const getAlbum = async () => {
+      const token = await axios({
+        method: 'post',
+        url: "https://accounts.spotify.com/api/token",
+        headers: {
+          "Content-Type": 'application/x-www-form-urlencoded'
+        },
+        data: {
+          grant_type: "client_credentials",
+          client_id: import.meta.env.VITE_CLIENT_ID,
+          client_secret: import.meta.env.VITE_CLIENT_SECRET
+        }
+      });
+      console.log(token);
+
       const {data} = await axios.get(`https://api.spotify.com/v1/albums/${id}`, {
         headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_SPOTIFY_TOKEN}`
+            Authorization: `Bearer ${token.data.access_token}`
         }
       });
       console.log(data)
@@ -95,9 +109,9 @@ const Album = () => {
           console.log(docc.id, " => ", docc.data());
           ratingss += docc.data().rating;
         });
-        console.log(ratingss)
 
-        setavgRating(ratingss/querySnapshot.size);
+        const tmpRating = ratingss/querySnapshot.size;
+        setavgRating(Math.round(tmpRating * 10) / 10);
     
       } catch (error) {
         console.error("Error getting all ratings:");

@@ -11,9 +11,24 @@ const Home = () => {
 
   useEffect(() => {
     const fetchAlbums = async () => {
+
+      const token = await axios({
+        method: 'post',
+        url: "https://accounts.spotify.com/api/token",
+        headers: {
+          "Content-Type": 'application/x-www-form-urlencoded'
+        },
+        data: {
+          grant_type: "client_credentials",
+          client_id: import.meta.env.VITE_CLIENT_ID,
+          client_secret: import.meta.env.VITE_CLIENT_SECRET
+        }
+      });
+      console.log(token);
+
       const {data} = await axios.get("https://api.spotify.com/v1/albums", {
         headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_SPOTIFY_TOKEN}`
+            Authorization: `Bearer ${token.data.access_token}`
         },
         params: {
             ids: "78bpIziExqiI9qztvNFlQu,5VoeRuTrGhTbKelUfwymwu,0KqvWwne6Iujkr2Szqsudk,0ODLCdHBFVvKwJGeSfd1jy"

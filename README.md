@@ -8,8 +8,9 @@ react, vite, moment.js, firebase, axios, react-router
 
 How to use? Go to https://spotynfactorial.vercel.app/ to see live demo.
 Or "git clone https://github.com/ropdxm/nfact2024.git" and do "npm install".
-You will also need Spotify api key to use this app. Get it from spotify dashboard
-and paste it in .env file as "VITE_SPOTIFY_TOKEN". Then go "npm run dev"
+You will also need Spotify api key to use this app. Get client id and client
+secret and paste it in .env as "VITE_CLIENT_ID", "VITE_CLIENT_SECRET"
+respectively. Then go "npm run dev".
 
 # Issues:
 I also wanted to add the feature of actually listening to music, but it turns out
